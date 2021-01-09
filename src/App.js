@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
+import PrivateRoute from './Redirection/PrivateRoute'
+import PublicRoute from './Redirection/PublicRoute'
 import './App.css';
 
 class App extends Component {
@@ -45,7 +47,7 @@ class App extends Component {
   }
 
   renderRoutes() {
-    
+
   }
 
   render() {
