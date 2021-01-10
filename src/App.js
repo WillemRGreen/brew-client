@@ -2,6 +2,14 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import PrivateRoute from './Redirection/PrivateRoute'
 import PublicRoute from './Redirection/PublicRoute'
+import EditBrew from './EditBrew/EditBrew'
+import BrewDisplayPage from './BrewDisplayPage/BrewDisplayPage'
+import AddBrewPage from './AddBrewPage/AddBrewPage'
+import Header from './Header/Header'
+import BrewList from './BrewList/BrewList'
+import LoginPage from './LoginPage/LoginPage'
+import RegisterPage from './RegisterPage/RegisterPage'
+import ApiContext from './Context'
 import './App.css';
 
 class App extends Component {
@@ -47,12 +55,59 @@ class App extends Component {
   }
 
   renderRoutes() {
-
+    return (
+      <div>
+        <PublicRoute
+          path={'/login'}
+          component={LoginPage}
+        />
+        <PublicRoute
+          path={'/register'}
+          component={RegisterPage}
+        />
+        <Route 
+          path={'/landing-page'}
+          component={LandingPage}
+        />
+        <PrivateRoute
+          path='/'
+          component={BrewList}
+        />
+        <PrivateRoute
+          path='/edit/:brewId'
+          component={EditBrew}
+        />
+        <PrivateRoute
+          path='/brew/:brewId'
+          component={BrewDisplayPage}
+        />
+        <PrivateRoute
+          path='/new-brew'
+          component={AddBrewPage}
+        />
+      </div>
+    )
   }
 
   render() {
+    const value = {
+      brews: this.state.brews,
+      addBrew: this.handleAddBrew,
+      deleteBrew: this.handleDeleteBrew,
+      loggedIn: this.handleLoggedIn
+    }
     return (
-      <h1> This is the app </h1>
+      <ApiContext.Provider value={value}>
+        <div>
+          <header>
+            <Header />
+          </header>
+          <div>
+            {this.renderRoutes}
+          </div>
+        </div>
+      </ApiContext.Provider>
+      
     );
   }
   
