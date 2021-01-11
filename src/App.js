@@ -9,6 +9,7 @@ import Header from './Header/Header'
 import BrewList from './BrewList/BrewList'
 import LoginPage from './LoginPage/LoginPage'
 import RegisterPage from './RegisterPage/RegisterPage'
+import LandingPage from './LandingPage/LandingPage'
 import ApiContext from './Context'
 import './App.css';
 

@@ -1,0 +1,24 @@
+import React, {Component} from 'react'
+import { Link } from 'react-router-dom'
+import ApiContext from '../ApiContext'
+import './IndBrew.css'
+
+export default class IndBrew extends Component {
+    static defaultProps = {
+
+    }
+
+    static contextType = ApiContext;
+
+    render() {
+        const { name, id } = this.props
+        return (
+            <div>
+                <Link  
+                    to={`/brew/${id}`}>
+                    {name}
+                </Link>
+            </div>
+        )
+    }
+}
