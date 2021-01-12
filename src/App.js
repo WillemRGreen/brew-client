@@ -7,9 +7,11 @@ import BrewDisplayPage from './BrewDisplayPage/BrewDisplayPage'
 import AddBrewPage from './AddBrewPage/AddBrewPage'
 import Header from './Header/Header'
 import BrewList from './BrewList/BrewList'
+import GuidancePage from './GuidancePage/GuidancePage'
 import LoginPage from './LoginPage/LoginPage'
 import RegisterPage from './RegisterPage/RegisterPage'
 import LandingPage from './LandingPage/LandingPage'
+import MainPage from './MainPage/MainPage'
 import ApiContext from './Context'
 import './App.css';
 
@@ -72,7 +74,11 @@ class App extends Component {
         />
         <PrivateRoute
           path='/'
-          component={BrewList}
+          component={MainPage}
+        />
+        <PrivateRoute
+          path='/guide'
+          component={GuidancePage}
         />
         <PrivateRoute
           path='/edit/:brewId'
