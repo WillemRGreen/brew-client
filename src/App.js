@@ -7,13 +7,18 @@ import BrewDisplayPage from './BrewDisplayPage/BrewDisplayPage'
 import AddBrewPage from './AddBrewPage/AddBrewPage'
 import Header from './Header/Header'
 import BrewList from './BrewList/BrewList'
-import GuidancePage from './GuidancePage/GuidancePage'
+import GuidancePage from './GuidancePages/GuidancePage'
 import LoginPage from './LoginPage/LoginPage'
 import RegisterPage from './RegisterPage/RegisterPage'
 import LandingPage from './LandingPage/LandingPage'
 import MainPage from './MainPage/MainPage'
 import ApiContext from './Context'
 import './App.css';
+import Kalita from './GuidancePages/Kalita/Kalita'
+import V60 from './GuidancePages/V60/V60'
+import Aeropress from './GuidancePages/Aeropress/Aeropress'
+import Automatic from './GuidancePages/Automatic/Automatic'
+import FrenchPress from './GuidancePages/FrenchPress/FrenchPress'
 
 class App extends Component {
   state = {
@@ -91,6 +96,26 @@ class App extends Component {
         <PrivateRoute
           path='/new-brew'
           component={AddBrewPage}
+        />
+        <PrivateRoute
+          path='/kalita-info'
+          component={Kalita}
+        />
+        <PrivateRoute
+          path='/V60-info'
+          component={V60}
+        />
+        <PrivateRoute
+          path='/aeropress-info'
+          component={Aeropress}
+        />
+        <PrivateRoute
+          path='/automatic-info'
+          component={Automatic}
+        />
+        <PrivateRoute
+          path='/french-press'
+          component={FrenchPress}
         />
       </div>
     )

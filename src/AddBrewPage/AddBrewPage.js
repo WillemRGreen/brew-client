@@ -26,7 +26,15 @@ export default class AddBrewPage extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    if(this.state.name.length > 0){
+    if(
+      this.state.name.length > 0 && 
+      this.state.description.length > 0 && 
+      this.state.method.length > 0 && 
+      this.state.input.length > 0 && 
+      this.state.output.length > 0 && 
+      this.state.brew_time.length > 0 && 
+      this.state.grind.length > 0 && 
+      this.state.roast_level.length > 0){
       const brew = {
         name: e.target['coffee-name'].value
       }
@@ -73,6 +81,7 @@ export default class AddBrewPage extends Component {
               Add brew
             </button>
           </div>
+          {input}
         </GenericForm>
       </section>
     )
