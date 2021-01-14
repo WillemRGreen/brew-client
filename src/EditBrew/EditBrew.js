@@ -48,7 +48,14 @@ export default class EditBookPage extends Component {
         this.state.grind.length > 0 &&
         this.state.roast_level.length > 0){
             const newBrew = {
-                //add brew fields
+                name: e.target['brew-name'].value,
+                description: e.target['brew-description'].value,
+                method: e.target['brew-method'].value,
+                input: e.target['brew-input'].value,
+                output: e.target['brew-output'].value,
+                brew_time: e.target['brew-brew-time'].value,
+                grind: e.target['brew-grind'].value,
+                roast_level: e.target['brew-roast-level'].value,
               }
               ApiService.patchBrew(brewId, newBrew)
                 .then(brew => {
@@ -137,13 +144,43 @@ export default class EditBookPage extends Component {
                 <option value='v60'>
                     v60
                 </option>
-                <option value='french_press'>
+                <option value='french-press'>
                     french press
                 </option>
                 <option value='aeropress'>
                     aeropress
                 </option>
             </select>
+          </div>
+          <div className='field'>
+            <label htmlFor='brew-input-input'>
+              Name
+            </label>
+            <input name='brew-input-input' className='brew-input-input'></input>
+          </div>
+          <div className='field'>
+            <label htmlFor='brew-output-input'>
+              Name
+            </label>
+            <input name='brew-output-input' className='brew-output-input'></input>
+          </div>
+          <div className='field'>
+            <label htmlFor='brew-brew-time-input'>
+              Name
+            </label>
+            <input name='brew-brew-time-input' className='brew-brew-time-input'></input>
+          </div>
+          <div className='field'>
+            <label htmlFor='brew-grind-input'>
+              Name
+            </label>
+            <input name='brew-grind-input' className='brew-grind-input'></input>
+          </div>
+          <div className='field'>
+            <label htmlFor='brew-roast-level-input'>
+              Name
+            </label>
+            <input name='brew-roast-level-input' className='brew-roast-level-input'></input>
           </div>
           <div className='buttons'>
             <button type='submit'>

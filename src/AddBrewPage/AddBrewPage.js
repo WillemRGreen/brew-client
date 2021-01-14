@@ -78,7 +78,7 @@ export default class AddBrewPage extends Component {
           </div>
           <div className='buttons'>
             <button type='submit'>
-              Add brew
+              Get Recommended Specs
             </button>
           </div>
           {input}
