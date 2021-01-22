@@ -16,6 +16,7 @@ export default class AddBrewPage extends Component {
     name: '',
     method: '',
     roast_level: '',
+    output: '',
     error: false
   }
 
@@ -40,6 +41,21 @@ export default class AddBrewPage extends Component {
     this.setState({name:e.currentTarget.value})
   }
 
+  handleMethodChange = e => {
+    e.preventDefault()
+    this.setState({method:e.currentTarget.value})
+  }
+
+  handleRoastChange = e => {
+    e.preventDefault()
+    this.setState({roast_level:e.currentTarget.value})
+  }
+
+  handleOutputChange = e => {
+    e.preventDefault()
+    this.setState({output:e.currentTarget.value})
+  }
+
   render() {
     let input = '';
     if(this.state.error){
@@ -62,7 +78,7 @@ export default class AddBrewPage extends Component {
             <label htmlFor='coffee-method-select'>
               Method
             </label>
-            <select>
+            <select onChange={this.handleMethodChange}>
                 <option value='automatic'>
                     automatic
                 </option>
@@ -84,7 +100,7 @@ export default class AddBrewPage extends Component {
             <label htmlFor='coffee-roast-level-select'>
               Method
             </label>
-            <select>
+            <select onChange={this.handleRoastChange}>
                 <option value='light'>
                     light
                 </option>
@@ -102,9 +118,16 @@ export default class AddBrewPage extends Component {
                 </option>
             </select>
           </div>
+          <div>
+            <label for='brew-weight'>
+              Enter Brew Weight
+            </label>
+            <input onChange={this.handleOutputChange}name='brew-weight' className='brew-weight'>
+            </input>
+          </div>
           <div className='buttons'>
             <button type='submit'>
-              Get Recommended Specs
+              Add Brew
             </button>
           </div>
           {input}
