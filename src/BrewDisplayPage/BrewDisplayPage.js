@@ -39,7 +39,6 @@ export default class BookPageMain extends React.Component {
         method: brew.method,
         input: brew.input,
         output: brew.output,
-        brew_time: brew.brew_time,
         grind: brew.grind,
         roast_level: brew.roast_level
     }
@@ -79,9 +78,6 @@ export default class BookPageMain extends React.Component {
                 </li>
                 <li>
                     {brew.output}
-                </li>
-                <li>
-                    {brew.brew_time}
                 </li>
                 <li>
                     {brew.grind}

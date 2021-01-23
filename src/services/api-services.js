@@ -26,7 +26,7 @@ const ApiService = {
           : res.json()
       )
   },
-  postBrew( name, description, method, input, output, brew_time, grind, roast_level ) {
+  postBrew( brew ) {
     return fetch(`${config.API_ENDPOINT}/api/brews`, {
       method: 'POST',
       headers: {
@@ -34,14 +34,11 @@ const ApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        name, 
-        description, 
-        method, 
-        input, 
-        output, 
-        brew_time, 
-        grind, 
-        roast_level
+        name: brew.name, 
+        description: brew.description, 
+        method: brew.method,
+        output: brew.output,
+        roast_level: brew.roast_level
       }),
     })
       .then(res =>

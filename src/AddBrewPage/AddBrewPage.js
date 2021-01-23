@@ -15,6 +15,7 @@ export default class AddBrewPage extends Component {
   state = {
     name: '',
     method: '',
+    description: '',
     roast_level: '',
     output: '',
     error: false
@@ -24,12 +25,15 @@ export default class AddBrewPage extends Component {
     e.preventDefault()
     if(
       this.state.name.length > 0 &&
-      this.state.roast_level.length > 0){
+      this.state.roast_level.length > 0 &&
+      this.state.output.length > 0 && 
+      this.state.description.length > 0){
       const brew = {
         name: e.target['coffee-name'].value,
-        roast_level: e.target['coffee-roast-level']
+        roast_level: e.target['coffee-roast-level'].value,
+        output: e.target['brew-weight'].value
       }
-      //this is where reco algo will go
+      ApiService.postBrew(brew)
     } else {
       this.setState({error: true})
     }
@@ -54,6 +58,11 @@ export default class AddBrewPage extends Component {
   handleOutputChange = e => {
     e.preventDefault()
     this.setState({output:e.currentTarget.value})
+  }
+
+  handleDescriptionChange = e => {
+    e.preventDefault()
+    this.setState({description:e.currentTarget.value})
   }
 
   render() {
@@ -122,7 +131,14 @@ export default class AddBrewPage extends Component {
             <label for='brew-weight'>
               Enter Brew Weight
             </label>
-            <input onChange={this.handleOutputChange}name='brew-weight' className='brew-weight'>
+            <input onChange={this.handleOutputChange} name='brew-weight' className='brew-weight'>
+            </input>
+          </div>
+          <div>
+            <label for='description'>
+              Enter Description
+            </label>
+            <input onChange={this.handleDescriptionChange} name='description' className='description'>
             </input>
           </div>
           <div className='buttons'>

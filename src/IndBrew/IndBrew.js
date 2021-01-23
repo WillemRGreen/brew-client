@@ -13,7 +13,7 @@ export default class IndBrew extends Component {
     render() {
         const { name, id } = this.props
         return (
-            <div>
+            <div className = 'ind-brew'>
                 <Link  
                     to={`/brew/${id}`}>
                     {name}
