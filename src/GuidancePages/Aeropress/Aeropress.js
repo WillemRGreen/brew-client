@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Link from 'react-router-dom'
 
 export default class Aeropress extends Component {
     render() {
@@ -8,7 +7,6 @@ export default class Aeropress extends Component {
                 <h2>
                     AeroPress Guide
                 </h2>
-                <img></img>
                 <p>
                     There are two methods for brewing an aeropress, standard and inverted. This guide will cover the inverted method. 
                 </p>

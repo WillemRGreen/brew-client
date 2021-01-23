@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Link from 'react-router-dom'
+import ApiContext from '../Context'
+import IndBrew from '../IndBrew/IndBrew'
 
 export default class BrewList extends Component {
     static defaultProps = {

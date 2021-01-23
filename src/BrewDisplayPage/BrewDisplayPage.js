@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ApiContext from '../ApiContext'
-import { findById } from '../brews-helpers'
-import ApiService from '../services/api-service'
-import './BrewPage.css'
+import ApiContext from '../Context'
+import { findById } from '../brew-helpers'
+import ApiService from '../services/api-services'
+import './BrewDisplayPage.css'
 
-export default class BookPageMain extends React.Component {
+export default class BrewDisplayPage extends React.Component {
   static defaultProps = {
     match: {
       params: {}
@@ -55,7 +55,7 @@ export default class BookPageMain extends React.Component {
   render() {
     const { brews=[] } = this.context
     const { brewId } = this.props.match.params
-    const brew = findBrew(brews, parseInt(brewId)) || { description: '' }
+    const brew = findById(brews, parseInt(brewId)) || { description: '' }
     return (
       <section>
         <div>

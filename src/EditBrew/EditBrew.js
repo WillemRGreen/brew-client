@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import GenericForm from '../GenericForm/GenericForm'
-import ApiContext from '../ApiContext'
-import ApiService from '../services/api-service'
+import ApiContext from '../Context'
+import ApiService from '../services/api-services'
 import { findById } from '../brew-helpers'
-import './EditBrewPage.css'
+import './EditBrew.css'
 
 
 
@@ -122,19 +122,19 @@ export default class EditBookPage extends Component {
             <label htmlFor='brew-name-input'>
               Name
             </label>
-            <input name='brew-name-input' className='brew-name-input'></input>
+            <input defaultValue={brew.name} name='brew-name-input' className='brew-name-input'></input>
           </div>
           <div className='field'>
             <label htmlFor='brew-description-input'>
               Description
             </label>
-            <input name='brew-description-input' className='brew-description-input'></input>
+            <input defaultValue={brew.description} name='brew-description-input' className='brew-description-input'></input>
           </div>
           <div className='field'>
             <label htmlFor='brew-method-select'>
               Method
             </label>
-            <select>
+            <select defaulValue={brew.method} >
                 <option value='automatic'>
                     automatic
                 </option>
@@ -154,33 +154,43 @@ export default class EditBookPage extends Component {
           </div>
           <div className='field'>
             <label htmlFor='brew-input-input'>
-              Name
+              Input
             </label>
-            <input name='brew-input-input' className='brew-input-input'></input>
+            <input defaultValue={brew.input} name='brew-input-input' className='brew-input-input'></input>
           </div>
           <div className='field'>
             <label htmlFor='brew-output-input'>
-              Name
+              Output
             </label>
-            <input name='brew-output-input' className='brew-output-input'></input>
-          </div>
-          <div className='field'>
-            <label htmlFor='brew-brew-time-input'>
-              Name
-            </label>
-            <input name='brew-brew-time-input' className='brew-brew-time-input'></input>
+            <input defaultValue={brew.output} name='brew-output-input' className='brew-output-input'></input>
           </div>
           <div className='field'>
             <label htmlFor='brew-grind-input'>
-              Name
+              Grind
             </label>
-            <input name='brew-grind-input' className='brew-grind-input'></input>
+            <select defaultValue={brew.grind}>
+              <option value='fine'>
+                  fine
+              </option>
+              <option value='medium/fine'>
+                  medium/fine
+              </option>
+              <option value='medium'>
+                  medium
+              </option>
+              <option value='medium/coarse'>
+                  medium/coarse
+              </option>
+              <option value='coarse'>
+                  coarse
+              </option>
+            </select>
           </div>
           <div className='field'>
             <label htmlFor='coffee-roast-level-select'>
-              Method
+              Roast Level
             </label>
-            <select>
+            <select defaultValue={brew.roast_level}>
                 <option value='light'>
                     light
                 </option>

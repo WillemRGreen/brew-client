@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Link from 'react-router-dom'
 
 export default class Kalita extends Component {
     render() {
@@ -8,7 +7,6 @@ export default class Kalita extends Component {
                 <h2>
                     Kalita Guide
                 </h2>
-                <img></img>
                 <p>
                     The Kalita brewer is one of the more complicated brewing methods. It is at its base a percolation method, which means that it revolves around water dripping through the coffee grounds and not soaking in them. 
                 </p>

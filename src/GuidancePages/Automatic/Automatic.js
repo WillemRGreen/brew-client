@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Link from 'react-router-dom'
 
 export default class Automatic extends Component {
     render() {
@@ -8,7 +7,6 @@ export default class Automatic extends Component {
                 <h2>
                     Automatic Guide
                 </h2>
-                <img></img>
                 <p>
                     To state the obvious, any automatic method is going to be the easiest way to brew coffee. 
                 </p>

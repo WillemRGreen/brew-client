@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Link from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import BrewList from '../BrewList/BrewList'
 
 export default class MainPage extends Component {

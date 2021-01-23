@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import ApiContext from '../ApiContext'
-import ApiService from '../services/api-service'
+import ApiContext from '../Context'
+import ApiService from '../services/api-services'
 import GenericForm from '../GenericForm/GenericForm'
-import './AddFolderPage.css'
+import './AddBrewPage.css'
 
 export default class AddBrewPage extends Component {
   static defaultProps = {

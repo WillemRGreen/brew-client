@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Link from 'react-router-dom'
 
 export default class FrenchPress extends Component {
     render() {
@@ -8,7 +7,6 @@ export default class FrenchPress extends Component {
                 <h2>
                     French Press Guide
                 </h2>
-                <img></img>
                 <p>
                     A French Press is an immersion method of brewing, which means that it steeps watr and grounds like tea, as opposed to percolation where the water just drips through the grounds. 
                 </p>

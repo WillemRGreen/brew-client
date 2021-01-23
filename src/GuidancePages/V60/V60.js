@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Link from 'react-router-dom'
 
 export default class V60 extends Component {
     render() {
@@ -8,7 +7,6 @@ export default class V60 extends Component {
                 <h2>
                     V60 Guide
                 </h2>
-                <img></img>
                 <p>
                     A V60 is a percolation method of brewing, which means that it is based on the water dripping through the ground coffee, instead of soaking in it. 
                 </p>
