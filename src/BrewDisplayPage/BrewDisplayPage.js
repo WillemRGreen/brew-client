@@ -27,31 +27,6 @@ export default class BrewDisplayPage extends React.Component {
     })
   }
 
-  markComplete = e => {
-    e.preventDefault()
-    const { brews=[] } = this.context
-    const { brewId } = this.props.match.params
-    const brew = findById(brews, parseInt(brewId)) || { description: '' }
-    const newBrew = {
-        id: brew.id,
-        name: brew.name,
-        description: brew.description,
-        method: brew.method,
-        input: brew.input,
-        output: brew.output,
-        grind: brew.grind,
-        roast_level: brew.roast_level
-    }
-    ApiService.patchBrew(brewId, newBrew)
-      .then(brew => {
-        this.context.addBrew(brew)
-        this.context.loggedIn()
-      })
-      .catch(error => {
-        console.error({ error })
-      })
-  }
-
   render() {
     const { brews=[] } = this.context
     const { brewId } = this.props.match.params

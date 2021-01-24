@@ -39,7 +39,7 @@ export default class AddBrewPage extends Component {
       .then(brew => {
         this.context.addBrew(brew)
         this.context.loggedIn()
-        this.props.history.push(`/${brew.id}`)
+        this.props.history.push(`/brew/${brew.id}`)
       })
     } else {
       this.setState({error: true})
