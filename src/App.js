@@ -47,6 +47,16 @@ class App extends Component {
     })
   }
 
+  handleEditBrew = brew => {
+    console.log(this.state.brews)
+    this.setState({
+      brews: [
+        this.state.brews.filter(brewToFind => brewToFind.id !== brew.id),
+        brew
+      ]
+    })
+  }
+
   handleDeleteBrew = brewId => {
     this.setState({
       brews: this.state.brews.filter(brew => brew.id !== brewId)
@@ -74,16 +84,17 @@ class App extends Component {
           path={'/register'}
           component={RegisterPage}
         />
-        <Route 
+        <PublicRoute 
           path={'/landing-page'}
           component={LandingPage}
         />
         <PrivateRoute
+          exact
           path='/'
           component={MainPage}
         />
         <PrivateRoute
-          path='/guide'
+          path='/brew-guides'
           component={GuidancePage}
         />
         <PrivateRoute
@@ -115,7 +126,7 @@ class App extends Component {
           component={Automatic}
         />
         <PrivateRoute
-          path='/french-press'
+          path='/french-press-info'
           component={FrenchPress}
         />
       </div>
@@ -127,6 +138,7 @@ class App extends Component {
       brews: this.state.brews,
       addBrew: this.handleAddBrew,
       deleteBrew: this.handleDeleteBrew,
+      editBrew: this.handleEditBrew,
       loggedIn: this.handleLoggedIn
     }
     return (
@@ -136,7 +148,7 @@ class App extends Component {
             <Header />
           </header>
           <div>
-            {this.renderRoutes}
+            {this.renderRoutes()}
           </div>
         </div>
       </ApiContext.Provider>

@@ -18,6 +18,7 @@ export default class BrewList extends Component {
                         <li key={brew.id}>
                             <IndBrew
                                 id={brew.id}
+                                key={brew.id}
                                 name={brew.name}
                             />
                         </li>

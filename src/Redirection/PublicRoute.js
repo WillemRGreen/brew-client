@@ -7,7 +7,7 @@ export default function PublicRoute({ component, ...props }) {
   return (
     <Route
       {...props}
-      render = {componentProps => (
+      render={componentProps => (
         TokenService.hasAuthToken()
           ? <Redirect to={'/'} />
           : <Component {...componentProps} />

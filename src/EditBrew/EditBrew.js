@@ -22,7 +22,6 @@ export default class EditBookPage extends Component {
     method: '',
     input: '',
     output: '',
-    brew_time: '',
     grind: '',
     roast_level: '',    
     error: false
@@ -32,7 +31,15 @@ export default class EditBookPage extends Component {
     const { brews=[] } = this.context
     const { brewId } = this.props.match.params
     const brew = findById(brews, parseInt(brewId)) || { description: '' }
-    this.setState({ name: brew.name, description: brew.description})
+    this.setState({ 
+      name: brew.name, 
+      description: brew.description, 
+      method: brew.method, 
+      input: brew.input, 
+      output: brew.output,
+      grind: brew.grind,
+      roast_level: brew.roast_level
+    })
   }
 
   handleSubmit = e => {
@@ -44,7 +51,6 @@ export default class EditBookPage extends Component {
         this.state.method.length > 0 &&
         this.state.input.length > 0 &&
         this.state.output.length > 0 &&
-        this.state.brew_time.length > 0 &&
         this.state.grind.length > 0 &&
         this.state.roast_level.length > 0){
             const newBrew = {
@@ -53,13 +59,12 @@ export default class EditBookPage extends Component {
                 method: e.target['brew-method'].value,
                 input: e.target['brew-input'].value,
                 output: e.target['brew-output'].value,
-                brew_time: e.target['brew-brew-time'].value,
                 grind: e.target['brew-grind'].value,
                 roast_level: e.target['brew-roast-level'].value,
               }
               ApiService.patchBrew(brewId, newBrew)
                 .then(brew => {
-                  this.context.addBrew(brewId, brew)
+                  this.context.loggedIn()
                   this.props.history.push('/')
                 })
                 .catch(error => {
@@ -119,22 +124,22 @@ export default class EditBookPage extends Component {
         <h2>Edit Brew</h2>
         <GenericForm onSubmit={this.handleSubmit}>
           <div className='field'>
-            <label htmlFor='brew-name-input'>
+            <label htmlFor='brew-name'>
               Name
             </label>
-            <input defaultValue={brew.name} name='brew-name-input' className='brew-name-input'></input>
+            <input defaultValue={brew.name} onChange={this.handleNameChange} name='brew-name' className='brew-name'></input>
           </div>
           <div className='field'>
-            <label htmlFor='brew-description-input'>
+            <label htmlFor='brew-description'>
               Description
             </label>
-            <input defaultValue={brew.description} name='brew-description-input' className='brew-description-input'></input>
+            <input defaultValue={brew.description} onChange={this.handleDescriptionChange} name='brew-description' className='brew-description'></input>
           </div>
           <div className='field'>
-            <label htmlFor='brew-method-select'>
+            <label htmlFor='brew-method'>
               Method
             </label>
-            <select defaulValue={brew.method} >
+            <select onChange={this.handleMethodChange} defaulValue={brew.method} name='brew-method'>
                 <option value='automatic'>
                     automatic
                 </option>
@@ -153,22 +158,22 @@ export default class EditBookPage extends Component {
             </select>
           </div>
           <div className='field'>
-            <label htmlFor='brew-input-input'>
+            <label htmlFor='brew-input'>
               Input
             </label>
-            <input defaultValue={brew.input} name='brew-input-input' className='brew-input-input'></input>
+            <input defaultValue={brew.input} onChange={this.handleInputChange} name='brew-input' className='brew-input'></input>
           </div>
           <div className='field'>
-            <label htmlFor='brew-output-input'>
+            <label htmlFor='brew-output'>
               Output
             </label>
-            <input defaultValue={brew.output} name='brew-output-input' className='brew-output-input'></input>
+            <input defaultValue={brew.output} onChange={this.handleOutputChange} name='brew-output' className='brew-output'></input>
           </div>
           <div className='field'>
-            <label htmlFor='brew-grind-input'>
+            <label htmlFor='brew-grind'>
               Grind
             </label>
-            <select defaultValue={brew.grind}>
+            <select defaultValue={brew.grind} onChange={this.handleGrindChange} name='brew-grind'>
               <option value='fine'>
                   fine
               </option>
@@ -187,10 +192,10 @@ export default class EditBookPage extends Component {
             </select>
           </div>
           <div className='field'>
-            <label htmlFor='coffee-roast-level-select'>
+            <label htmlFor='brew-roast-level'>
               Roast Level
             </label>
-            <select defaultValue={brew.roast_level}>
+            <select defaultValue={brew.roast_level} onChange={this.handleRoastLevelChange} name='brew-roast-level'>
                 <option value='light'>
                     light
                 </option>
@@ -214,6 +219,7 @@ export default class EditBookPage extends Component {
             </button>
           </div>
         </GenericForm>
+        {input}
       </section>
     )
   }

@@ -30,10 +30,17 @@ export default class AddBrewPage extends Component {
       this.state.description.length > 0){
       const brew = {
         name: e.target['coffee-name'].value,
+        method: e.target['coffee-method-select'].value,
+        description: e.target['description'].value,
         roast_level: e.target['coffee-roast-level'].value,
         output: e.target['brew-weight'].value
       }
       ApiService.postBrew(brew)
+      .then(brew => {
+        this.context.addBrew(brew)
+        this.context.loggedIn()
+        this.props.history.push(`/${brew.id}`)
+      })
     } else {
       this.setState({error: true})
     }
@@ -81,13 +88,13 @@ export default class AddBrewPage extends Component {
             <label htmlFor='coffee-name'>
               Name
             </label>
-            <input name='coffee-name' className='coffee-name' placeholder='Coffee Name'></input>
+            <input onChange={this.handleNameChange} name='coffee-name' className='coffee-name' placeholder='Coffee Name'></input>
           </div>
           <div className='field'>
             <label htmlFor='coffee-method-select'>
               Method
             </label>
-            <select onChange={this.handleMethodChange}>
+            <select name='coffee-method-select' onChange={this.handleMethodChange}>
                 <option value='automatic'>
                     automatic
                 </option>
@@ -109,7 +116,7 @@ export default class AddBrewPage extends Component {
             <label htmlFor='coffee-roast-level-select'>
               Method
             </label>
-            <select onChange={this.handleRoastChange}>
+            <select name='coffee-roast-level' onChange={this.handleRoastChange}>
                 <option value='light'>
                     light
                 </option>
@@ -128,18 +135,18 @@ export default class AddBrewPage extends Component {
             </select>
           </div>
           <div>
-            <label for='brew-weight'>
-              Enter Brew Weight
+            <label htmlFor='brew-weight'>
+              Enter Brew Weight*
             </label>
             <input onChange={this.handleOutputChange} name='brew-weight' className='brew-weight'>
             </input>
           </div>
           <div>
-            <label for='description'>
+            <label htmlFor='description'>
               Enter Description
             </label>
-            <input onChange={this.handleDescriptionChange} name='description' className='description'>
-            </input>
+            <textarea onChange={this.handleDescriptionChange} name='description' className='description'>
+            </textarea>
           </div>
           <div className='buttons'>
             <button type='submit'>

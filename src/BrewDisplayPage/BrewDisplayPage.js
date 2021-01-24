@@ -74,7 +74,7 @@ export default class BrewDisplayPage extends React.Component {
                     {brew.method}
                 </li>
                 <li>
-                    {brew.input}
+                    {brew.input}g
                 </li>
                 <li>
                     {brew.output}
