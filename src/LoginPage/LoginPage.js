@@ -3,6 +3,7 @@ import TokenService from '../services/token-service'
 import AuthApiService from '../services/auth-api-service'
 import GenericForm from '../GenericForm/GenericForm'
 import ApiContext from '../Context'
+import Button from '../Button/Button'
 
 export default class LoginPage extends Component {
     static defaultProps = {
@@ -71,9 +72,9 @@ export default class LoginPage extends Component {
                     id='LoginForm__password'>
                 </input>
                 </div>
-                <button type='submit'>
+                <Button type='submit'>
                     Login
-                </button>    
+                </Button>    
             </GenericForm>
             
         )

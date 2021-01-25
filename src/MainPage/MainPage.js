@@ -1,22 +1,36 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import BrewList from '../BrewList/BrewList'
+import TokenService from '../services/token-service'
+import Button from '../Button/Button'
+import './MainPage.css'
 
 export default class MainPage extends Component {
+
+    handleLogoutClick = () => {
+        TokenService.clearAuthToken()
+    }
     render() {
         return (
             <div>
-                <nav>
+                <nav className = 'group'>
                     <Link to={'/new-brew'}>
-                        <button>
+                        <Button className = 'item'>
                             Add new brew
-                        </button>
+                        </Button>
                     </Link>
                     <Link to={'/brew-guides'}>
-                        <button>
+                        <Button className = 'item'>
                             Guidance
-                        </button>
+                        </Button>
                     </Link>
+                    <div className='item logout-button'>
+                        <Link
+                            onClick={this.handleLogoutClick}
+                            to='/'>
+                            Logout
+                        </Link>
+                    </div>
                 </nav>
                 <div>
                     <BrewList />

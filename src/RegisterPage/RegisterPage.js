@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import GenericForm from '../GenericForm/GenericForm'
 import AuthApiService from '../services/auth-api-service'
+import Button from '../Button/Button'
 
 export default class RegistrationPage extends Component {
   static defaultProps = {
@@ -65,9 +66,9 @@ export default class RegistrationPage extends Component {
             id='RegistrationPage__password'>
           </input>
         </div>
-        <button type='submit'>
+        <Button type='submit'>
           Register
-        </button>
+        </Button>
       </GenericForm>
     )
   }

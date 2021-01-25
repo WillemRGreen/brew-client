@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ApiContext from '../Context'
 import IndBrew from '../IndBrew/IndBrew'
+import './BrewList.css'
 
 export default class BrewList extends Component {
     static defaultProps = {
@@ -12,10 +13,10 @@ export default class BrewList extends Component {
     render() {
         const { brews=[] } = this.context;
         return (
-            <div>
-                <ul>
+            <div className = 'group'>
+                <ul className = 'brew-list'>
                     {brews.map(brew =>
-                        <li key={brew.id}>
+                        <li className = 'ind-brew' key={brew.id}>
                             <IndBrew
                                 id={brew.id}
                                 key={brew.id}

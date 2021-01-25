@@ -63,32 +63,31 @@ export default class BrewDisplayPage extends React.Component {
             </ul>
         </div>
         <div className='group-for-buttons'>
+
           <button 
             className='button' 
             type='button' 
-            onClick={this.handleDeleteBrew}
-          >
+            onClick={this.handleDeleteBrew}>
               Delete Brew
           </button>
           
-              <button
-                className='button'
-                type='button'
-              >
-                <Link
-                  to={`/edit/${brewId}`}
-                >
-                  Brew Again!
-                </Link>
-              </button>
+          <button
+            className='button'
+            type='button'>
+            <Link
+              to={`/edit/${brewId}`}>
+              Brew Again
+            </Link>
+          </button>
 
-        <button
-            tag='button'
-            role='link'
-            onClick={() => this.props.history.goBack()}
-            className='button'>
-          Back
-        </button>
+          <button
+              tag='button'
+              role='link'
+              onClick={() => this.props.history.goBack()}
+              className='button'>
+            Back
+          </button>
+          
       </div>
         
       </section>

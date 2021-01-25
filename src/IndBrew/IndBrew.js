@@ -15,7 +15,8 @@ export default class IndBrew extends Component {
         return (
             <div className = 'ind-brew'>
                 <Link  
-                    to={`/brew/${id}`}>
+                    to={`/brew/${id}`}
+                    className='brew-link'>
                     {name}
                 </Link>
             </div>

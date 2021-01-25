@@ -147,7 +147,7 @@ class App extends Component {
           <header>
             <Header />
           </header>
-          <div>
+          <div className='main'>
             {this.renderRoutes()}
           </div>
         </div>
