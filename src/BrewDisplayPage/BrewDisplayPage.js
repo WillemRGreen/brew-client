@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../Button/Button'
 import { Link } from 'react-router-dom'
 import ApiContext from '../Context'
 import { findById } from '../brew-helpers'
@@ -32,62 +33,64 @@ export default class BrewDisplayPage extends React.Component {
     const { brewId } = this.props.match.params
     const brew = findById(brews, parseInt(brewId)) || { description: '' }
     return (
-      <section>
-        <div>
-        {brew.name}
-        </div>
-        <div>
-          <p>Your Description:</p>
-        </div>
-        <div>
-          {brew.description}
-        </div>
-        <div>
-            <ul>
-                Brew Specs:
-                <li>
-                    {brew.method}
-                </li>
-                <li>
-                    {brew.input}g
-                </li>
-                <li>
-                    {brew.output}
-                </li>
-                <li>
-                    {brew.grind}
-                </li>
-                <li>
-                    {brew.roast_level}
-                </li>
-            </ul>
+      <section className='display-section'>
+        <div className = 'group2'>
+          <div className='specs-text'>
+            <h4>{brew.name}</h4>
+          </div>
+          <div className='specs-text'>
+            <p>Your Description:</p>
+          </div>
+          <div className='specs-text'>
+            {brew.description}
+          </div>
+          <div>
+              <ul className='specs-list specs-text'>
+                  Brew Specs:
+                  <li>
+                      Method: {brew.method}
+                  </li>
+                  <li>
+                      Coffee Input: {brew.input}g
+                  </li>
+                  <li>
+                      Brew Weight: {brew.output}
+                  </li>
+                  <li>
+                      Grind Size: {brew.grind}
+                  </li>
+                  <li>
+                      Roast Profile: {brew.roast_level}
+                  </li>
+              </ul>
+          </div>
         </div>
         <div className='group-for-buttons'>
 
-          <button 
+          <Button 
             className='button' 
             type='button' 
             onClick={this.handleDeleteBrew}>
               Delete Brew
-          </button>
+          </Button>
           
-          <button
+          <Button
             className='button'
             type='button'>
             <Link
               to={`/edit/${brewId}`}>
               Brew Again
             </Link>
-          </button>
+          </Button>
 
-          <button
+          <Button
               tag='button'
               role='link'
               onClick={() => this.props.history.goBack()}
               className='button'>
             Back
-          </button>
-          
+          </Button>
+
       </div>
         
       </section>

@@ -1,6 +1,7 @@
 .brew-list {
     list-style-type: none;
-    margin: 30px 0 30px 0;
+    margin: 30px 0px 30px 0px;
+    padding: 0;
 }
 
 .ind-brew {

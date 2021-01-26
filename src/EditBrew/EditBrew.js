@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import GenericForm from '../GenericForm/GenericForm'
 import ApiContext from '../Context'
 import ApiService from '../services/api-services'
+import Button from '../Button/Button'
 import { findById } from '../brew-helpers'
 import './EditBrew.css'
 
@@ -120,9 +121,9 @@ export default class EditBookPage extends Component {
         </div>
     }
     return (
-      <section className='add-brew'>
+      <section className='group3'>
         <h2>Edit Brew</h2>
-        <GenericForm onSubmit={this.handleSubmit}>
+        <GenericForm onSubmit={this.handleSubmit} className='item'>
           <div className='field'>
             <label htmlFor='brew-name'>
               Name
@@ -214,9 +215,9 @@ export default class EditBookPage extends Component {
             </select>
           </div>
           <div className='buttons'>
-            <button type='submit'>
+            <Button type='submit'>
               Submit Edits
-            </button>
+            </Button>
           </div>
         </GenericForm>
         {input}

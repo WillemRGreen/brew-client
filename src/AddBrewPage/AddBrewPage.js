@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ApiContext from '../Context'
 import ApiService from '../services/api-services'
 import GenericForm from '../GenericForm/GenericForm'
+import Button from '../Button/Button'
 import './AddBrewPage.css'
 
 export default class AddBrewPage extends Component {
@@ -136,9 +137,9 @@ export default class AddBrewPage extends Component {
           </div>
           <div>
             <label htmlFor='brew-weight'>
-              Enter Brew Weight*
+              Enter Brew Weight
             </label>
-            <input onChange={this.handleOutputChange} name='brew-weight' className='brew-weight'>
+            <input onChange={this.handleOutputChange} name='brew-weight' className='brew-weight' placeholder='Enter your desired amount of coffee in grams'>
             </input>
           </div>
           <div>
@@ -149,9 +150,9 @@ export default class AddBrewPage extends Component {
             </textarea>
           </div>
           <div className='buttons'>
-            <button type='submit'>
+            <Button type='submit'>
               Add Brew
-            </button>
+            </Button>
           </div>
           {input}
         </GenericForm>

@@ -1,0 +1,69 @@
+.group2 {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+}
+
+.group-for-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.edit-button {
+    box-shadow: 3px 4px 0px 0px #9A4520;
+    background:linear-gradient(to bottom, #33302B 5%, #221F1C 100%);
+    background-color:#221F1C;
+    border-radius:5px;
+    border:1px solid #221F1C;
+    display:inline-block;
+    cursor:pointer;
+    color:#E7DADA;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:17px;
+    padding:7px 25px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #9A4520;
+    max-width:200px;
+    min-width:150px;
+}
+
+.edit-button:hover {
+    box-shadow: 4px 5px 0px 0px #9A4520;
+}
+.edit-button {
+    color: #E7DADA;
+    text-decoration: none;
+}
+  
+.edit-button:visited {
+    color: #E7DADA;
+}
+
+.display-section {
+    color: #221F1C;
+}
+
+.specs-list {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+.button {
+    margin: 15px 8px;
+}
+
+.specs-text {
+    color: #33302B;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 10px;
+}
+
+li {
+    margin: 5px;
+}
+
+h4 {
+    font-size: 20px;
+}

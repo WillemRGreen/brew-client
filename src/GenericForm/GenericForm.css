@@ -1,0 +1,54 @@
+.generic-form {
+    color: #131200;
+    padding: 16px;
+    position:relative;
+  }
+  
+  .generic-form label {
+    display: block;
+    font-size: 16px;
+    padding-bottom: 8px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #2A240F;
+  }
+  
+  .generic-form input,
+  .generic-form textarea,
+  .generic-form select {
+    font-size: 14px;
+    padding: 8px;
+    width: 300px;
+  }
+  
+  .generic-form select {
+    height: 33px;
+  }
+  
+  .generic-form > .field {
+    margin-bottom: 16px;
+  }
+  .generic-form > .buttons {
+    margin-top: 26px;
+  }
+  
+  .generic-form-button {
+    box-shadow: 3px 4px 0px 0px #9A4520;
+    background:linear-gradient(to bottom, #33302B 5%, #221F1C 100%);
+    background-color:#221F1C;
+    border-radius:10px;
+    border:1px solid #221F1C;
+    display:inline-block;
+    cursor:pointer;
+    color:#E7DADA;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:17px;
+    padding:7px 25px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #9A4520;
+    max-width:200px;
+}
+
+.generic-form-button:hover {
+    box-shadow: 4px 5px 0px 0px #9A4520;
+}
+  

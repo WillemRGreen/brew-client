@@ -1,0 +1,21 @@
+.guide-div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.method-list {
+    list-style-type: none;
+    padding:0;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #33302B;
+}
+
+.method-li {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+}
