@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
 import PrivateRoute from './Redirection/PrivateRoute'
 import PublicRoute from './Redirection/PublicRoute'
 import EditBrew from './EditBrew/EditBrew'
