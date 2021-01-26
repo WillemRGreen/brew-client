@@ -1,0 +1,9 @@
+.register-page {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.register-button {
+    margin-top: 15px
+}

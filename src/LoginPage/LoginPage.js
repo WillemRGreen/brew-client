@@ -4,6 +4,7 @@ import AuthApiService from '../services/auth-api-service'
 import GenericForm from '../GenericForm/GenericForm'
 import ApiContext from '../Context'
 import Button from '../Button/Button'
+import './LoginPage.css'
 
 export default class LoginPage extends Component {
     static defaultProps = {
@@ -44,38 +45,40 @@ export default class LoginPage extends Component {
     render(){
         const { error } = this.state
         return (
-            <GenericForm 
-                className='login-form'
-                onSubmit={this.handleSubmitJwtAuth}>
+            <div className='login-page'>
+                <GenericForm 
+                    className='login-form'
+                    onSubmit={this.handleSubmitJwtAuth}>
 
-                <div>
-                    {error && <p className = 'red'>{error}</p>}
-                </div>
-                <div className='user_name'>
-                <label htmlFor='LoginForm__user_name'>
-                    User name
-                </label>
-                <input
-                    required
-                    name='user_name'
-                    id='LoginForm__user_name'>
-                </input>
-                </div>
-                <div className='password'>
-                <label htmlFor='LoginForm__password'>
-                    Password
-                </label>
-                <input
-                    required
-                    name='password'
-                    type='password'
-                    id='LoginForm__password'>
-                </input>
-                </div>
-                <Button type='submit'>
-                    Login
-                </Button>    
-            </GenericForm>
+                    <div>
+                        {error && <p className = 'red'>{error}</p>}
+                    </div>
+                    <div className='user_name'>
+                    <label htmlFor='LoginForm__user_name'>
+                        User name
+                    </label>
+                    <input
+                        required
+                        name='user_name'
+                        id='LoginForm__user_name'>
+                    </input>
+                    </div>
+                    <div className='password'>
+                    <label htmlFor='LoginForm__password'>
+                        Password
+                    </label>
+                    <input
+                        required
+                        name='password'
+                        type='password'
+                        id='LoginForm__password'>
+                    </input>
+                    </div>
+                    <Button type='submit' className='login-button'>
+                        Login
+                    </Button>    
+                </GenericForm>
+            </div>
             
         )
     }

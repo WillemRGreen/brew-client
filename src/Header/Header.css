@@ -1,29 +1,19 @@
 h1 {
     text-align: center;
+}
+
+h1 a {
+    text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: none;
     text-shadow: 1px 1px #9A4520;
     color: #33302B;
   }
   
-h1:hover {
+h1 a:hover {
     text-shadow: 2px 2px #9A4520;
 }
   
-h1:visited {
+h1 a:visited {
     color: #33302B;
-}
-  
-a {
-    text-shadow: 1px 1px #9A4520;
-    color: #33302B;
-    text-decoration: none;
-}
-  
-a:visited {
-    color: #33302B;
-}
-  
-a:hover {
-    text-shadow: 2px 2px #9A4520;
 }

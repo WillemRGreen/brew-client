@@ -16,6 +16,22 @@ h2 {
 
 .method-li {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
+}
+
+.method-li a {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+    text-shadow: 1px 1px #9A4520;
+    color: #33302B;
+  }
+  
+.method-li a:hover {
+    text-shadow: 2px 2px #9A4520;
+}
+  
+.method-li a:visited {
+    color: #33302B;
 }

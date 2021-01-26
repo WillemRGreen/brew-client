@@ -75,7 +75,7 @@ export default class BrewDisplayPage extends React.Component {
           </Button>
           
           <Button
-            className='button'
+            className='button button-for-link'
             type='button'>
             <Link
               to={`/edit/${brewId}`}>
