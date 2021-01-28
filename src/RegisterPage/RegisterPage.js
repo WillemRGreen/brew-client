@@ -39,6 +39,7 @@ export default class RegistrationPage extends Component {
     const { error } = this.state
     return (
       <div className='register-page'>
+        <h3>Register</h3>
         <GenericForm
           className='RegistrationPage'
           onSubmit={this.handleSubmit}>

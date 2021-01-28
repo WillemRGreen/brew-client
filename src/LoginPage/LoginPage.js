@@ -46,6 +46,7 @@ export default class LoginPage extends Component {
         const { error } = this.state
         return (
             <div className='login-page'>
+                <h3>Login</h3>
                 <GenericForm 
                     className='login-form'
                     onSubmit={this.handleSubmitJwtAuth}>
