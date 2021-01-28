@@ -5,7 +5,7 @@ const AuthApiService = {
     return fetch(`${config.API_ENDPOINT}/api/auth/login`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({ user_name, password }),
     })
@@ -16,11 +16,11 @@ const AuthApiService = {
       )
   },
   postUser(user) {
+    console.log(user)
     return fetch(`${config.API_ENDPOINT}/api/users`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json',
-        "Access-Control-Allow-Origin": "*"
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(user),
     })
