@@ -19,7 +19,6 @@ export default class RegistrationPage extends Component {
   handleSubmit = ev => {
     ev.preventDefault()
     const { user_name, password } = ev.target
-    console.log(ev.target, user_name.value, password.value)
 
     this.setState({ error: null })
     AuthApiService.postUser({
