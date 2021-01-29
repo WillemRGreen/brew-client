@@ -13,6 +13,7 @@ export default class BrewList extends Component {
     render() {
         const { brews=[] } = this.context;
         return (
+            //returning the li elements containing the individual brew items
             <div className = 'group'>
                 <ul className = 'brew-list'>
                     {brews.map(brew =>

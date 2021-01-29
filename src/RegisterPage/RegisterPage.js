@@ -17,6 +17,7 @@ export default class RegistrationPage extends Component {
   }
 
   handleSubmit = ev => {
+    //function handles return of token and redirects to login page
     ev.preventDefault()
     const { user_name, password } = ev.target
 

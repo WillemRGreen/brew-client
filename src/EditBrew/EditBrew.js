@@ -47,6 +47,7 @@ export default class EditBookPage extends Component {
     e.preventDefault()
     const { brewId } = this.props.match.params;
     if(
+      //form validation
         this.state.name.length > 0 &&
         this.state.description.length > 0 &&
         this.state.method.length > 0 &&

@@ -25,6 +25,7 @@ export default class AddBrewPage extends Component {
   handleSubmit = e => {
     e.preventDefault()
     if(
+      //form validation
       this.state.name.length > 0 &&
       this.state.roast_level.length > 0 &&
       this.state.output.length > 0 && 

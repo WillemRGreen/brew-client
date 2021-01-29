@@ -26,9 +26,10 @@ export default class MainPage extends Component {
                     </Link>
                     <div className='item logout-button'>
                         <Link
-                            onClick={this.handleLogoutClick}
                             to='/'>
-                            Logout
+                                <Button onClick={this.handleLogoutClick}>
+                                    Logout
+                                </Button>
                         </Link>
                     </div>
                 </nav>

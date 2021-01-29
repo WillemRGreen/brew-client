@@ -13,6 +13,7 @@ export default class IndBrew extends Component {
     render() {
         const { name, id } = this.props
         return (
+            //IndBrew being called by BrewList to generate brew items
             <div className = 'ind-brew'>
                 <Link  
                     to={`/brew/${id}`}
