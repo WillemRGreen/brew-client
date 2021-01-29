@@ -15,9 +15,9 @@ export default class AddBrewPage extends Component {
 
   state = {
     name: '',
-    method: '',
+    method: 'automatic',
     description: '',
-    roast_level: '',
+    roast_level: 'light',
     output: '',
     error: false
   }
@@ -95,7 +95,7 @@ export default class AddBrewPage extends Component {
             <label htmlFor='coffee-method-select'>
               Method
             </label>
-            <select name='coffee-method-select' onChange={this.handleMethodChange}>
+            <select defaultValue={'automatic'} name='coffee-method-select' onChange={this.handleMethodChange}>
                 <option value='automatic'>
                     automatic
                 </option>
@@ -117,7 +117,7 @@ export default class AddBrewPage extends Component {
             <label htmlFor='coffee-roast-level-select'>
               Method
             </label>
-            <select name='coffee-roast-level' onChange={this.handleRoastChange}>
+            <select defaultValue={'light'} name='coffee-roast-level' onChange={this.handleRoastChange}>
                 <option value='light'>
                     light
                 </option>
