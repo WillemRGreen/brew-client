@@ -54,7 +54,7 @@ export default class BrewDisplayPage extends React.Component {
                       Coffee Input: {brew.input}g
                   </li>
                   <li>
-                      Brew Weight: {brew.output}
+                      Brew Weight: {brew.output}g
                   </li>
                   <li>
                       Grind Size: {brew.grind}

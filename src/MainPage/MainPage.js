@@ -16,7 +16,7 @@ export default class MainPage extends Component {
                 <nav className = 'group'>
                     <Link to={'/new-brew'}>
                         <Button className = 'item'>
-                            Add new brew
+                            Add Brew
                         </Button>
                     </Link>
                     <Link to={'/brew-guides'}>
@@ -33,9 +33,9 @@ export default class MainPage extends Component {
                         </Link>
                     </div>
                 </nav>
-                <div>
+                <section>
                     <BrewList />
-                </div>
+                </section>
             </div>
         )
     }

@@ -1,7 +1,7 @@
 .group {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    text-align: center;
 }
 
 .item {
@@ -27,4 +27,37 @@
   
 .logout-button a:visited {
     color: #33302B;
+}
+
+@media all and (min-width: 350px){
+    .group {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .item {
+        margin: 5px 5px;
+    }
+    
+    .logout-button {
+        text-align: center;
+    }
+    
+    .logout-button a {
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: bold;
+        text-decoration: none;
+        text-shadow: 1px 1px #9A4520;
+        color: #33302B;
+      }
+      
+    .logout-button a:hover {
+        text-shadow: 2px 2px #9A4520;
+    }
+      
+    .logout-button a:visited {
+        color: #33302B;
+    }
 }

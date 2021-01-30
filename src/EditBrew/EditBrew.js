@@ -141,7 +141,7 @@ export default class EditBookPage extends Component {
             <label htmlFor='brew-method'>
               Method
             </label>
-            <select onChange={this.handleMethodChange} defaulValue={brew.method} name='brew-method'>
+            <select onChange={this.handleMethodChange} defaultValue={brew.method} name='brew-method'>
                 <option value='automatic'>
                     automatic
                 </option>

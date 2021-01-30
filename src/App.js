@@ -146,9 +146,9 @@ class App extends Component {
           <header>
             <Header />
           </header>
-          <div className='main'>
+          <main className='main'>
             {this.renderRoutes()}
-          </div>
+          </main>
         </div>
       </ApiContext.Provider>
       
