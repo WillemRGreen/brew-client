@@ -1,6 +1,9 @@
 ## Brewer's Guide
 
-This is a React App designed to help specialty coffee brewer's of all levels improve and keep track of their coffees. Once you enter in the starting specifications for your coffee, the app will automatically create the rest for you. Then it will save the brew for you to look at later, and if you decide its not to your preference you can always adjust it manually. 
+This is a React App designed to help specialty coffee brewer's of all levels improve and keep track of their coffees. Once you enter in the starting specifications for your coffee, the app will automatically create the rest for you. Then it will save the brew for you to look at later, and if you decide its not to your preference you can always adjust it manually.
+
+## Live site
+https://brew-guide-client.vercel.app/landing-page
 
 ## technologies
 The client side of this app is built on React and React-router, deployed with vercel. The App.js file creates the routes and context, which the rest of the components access for the books, folders, and user information. The structure of the app is separated into different components, with most of the functionality of the components in other files, imported as needed.
